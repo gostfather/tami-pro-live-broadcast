@@ -1,0 +1,90 @@
+{
+  "name": "@xy/tami-pro-live-broadcast",
+  "frontname": "tami_pro_live_broadcast",
+  "description": "tami-pro-live-broadcast",
+  "author": "f2e@quvideo.com",
+  "license": "ISC",
+  "xyOSSUploader": {
+    "local": "dist",
+    "dest": "web/oss-uploader"
+  },
+  "keywords": [
+    "react",
+    "dva",
+    "antd"
+  ],
+  "pre-commit": [
+    "eslint",
+    "format"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  },
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@xy/vcm-version-control": "^1.0.7",
+    "@xy/xy-react-scripts": "^1.0.8",
+    "autoprefixer": "^10.4.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "react-router-native": "^6.2.1",
+    "typescript": "^4.5.4",
+    "web-vitals": "^2.1.3"
+  },
+  "devDependencies": {
+    "husky": "1.3.1",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.19",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  },
+  "scripts": {
+    "start": "xy-react-scripts start",
+    "build-qa": "cross-env NODE_ENV=development xy-react-scripts build",
+    "build-prod": "cross-env NODE_ENV=production xy-react-scripts build",
+    "upload-qa": "f2e-uploader -d web/vcm-cluster/tami-pro-live-broadcast/dist-qa -l dist -p",
+    "upload-prod": "f2e-uploader -d web/vcm-cluster/tami-pro-live-broadcast/dist -l dist -p",
+    "uploadNewVersion": "vcm-version-control uploadNewVersion",
+    "changeVersion": "PROD_PATH=web/vcm-cluster/tami-pro-live-broadcast/dist vcm-version-control changeVersion",
+    "versionCheck": "vcm-version-control versionCheck"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.1%",
+      "not dead",
+      "not op_mini all",
+      "ios > 7"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  }
+}
